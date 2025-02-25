@@ -7,10 +7,38 @@ html,body{
     width: 100%;
     height: 100%;
 }
+
+#minicircle{
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 999999;
+    border-radius: 50%;
+/* imp */
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+
+}
+.bounding{
+    width: fit-content;
+    /* background-color: red; */
+    overflow: hidden;
+}
+
+.bounding .boundingelem{
+    transform: translateY(100%);
+    
+}
+
+
+
+
 #main{
     width: 100%;
+    background-color: black;
 }
 #hero{
+    position: relative;
     width: 100%;
     height: 100vh; /*screen size */
     background-color: black;
@@ -53,6 +81,9 @@ nav a{
 .blocktext{
     width: fit-content;
     /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 .blocktext h5{
     text-align: right;
@@ -63,6 +94,9 @@ nav a{
 #smallheading{
     margin-top: 100px;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 #smallheading h5{
