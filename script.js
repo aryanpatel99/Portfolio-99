@@ -30,33 +30,6 @@ function firstPageAnim(){
 }
 
 
-// function circledesign(){
-//     // defining default scale value 
-//     var xscale = 1
-//     var yscale = 1
-
-//     var xprev = 0
-//     var yprev = 0
-//     window.addEventListener('mousemove',function(dets){
-//         dets.clientX - xprev
-//         x= dets.clientX
-
-//     })
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 //code for cursor
 function circleMouseFollower(){
     window.addEventListener('mousemove',function(details){
@@ -67,4 +40,43 @@ function circleMouseFollower(){
 
 
 circleMouseFollower()
-firstPageAnim()
+firstPageAnim() 
+
+
+// select the elem and make the mouse move effect
+document.querySelectorAll('.elem')
+.forEach(function(elem){
+    var rotate = 0
+    var diffrot = 0
+
+
+    elem.addEventListener('mouseleave',function(details){
+         
+         gsap.to(elem.querySelector('img'),{
+            opacity:0,
+            display:'none',
+            ease:Power3,
+            duration:0.5
+
+         })
+     })
+
+    elem.addEventListener('mousemove',function(details){
+
+       var diff = details.clientY -  elem.getBoundingClientRect().top
+
+       diffrot= details.clientX - rotate
+       rotate = details.clientX
+
+       
+        
+        gsap.to(elem.querySelector('img'),{
+            opacity:1,
+            display:'block',
+            ease:Power3,
+            top:diff,
+            left: details.clientX,
+            rotate: gsap.utils.clamp(-20,20,diffrot*0.5)
+        })
+    })
+})
