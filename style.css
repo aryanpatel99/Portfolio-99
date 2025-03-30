@@ -274,3 +274,15 @@ nav a{
     text-transform: uppercase;
     font-weight: 500;
 }
+#git-icon{
+    display: flex;
+    gap: 5px;
+}
+#linkdin-icon{
+    display: flex;
+    gap: 5px;
+}
+#insta-icon{
+    display: flex;
+    gap: 5px;
+}
