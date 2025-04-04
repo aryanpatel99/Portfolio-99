@@ -87,5 +87,6 @@ setInterval(() => {
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    time.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+    let ampm = hours>12?'PM':'AM'
+    time.innerHTML = `${hours} : ${minutes} : ${seconds} ${ampm}`;
 }, 1000);
