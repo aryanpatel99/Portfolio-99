@@ -312,6 +312,7 @@ nav a{
 
 .underline{
     position: relative;
+    font-weight: 600;
 }
 
 .underline::before{
